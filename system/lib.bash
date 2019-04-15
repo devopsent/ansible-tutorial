@@ -52,7 +52,7 @@ function setup_repos() {
     local \
         repos=("${@}")
     for repo in "${repos[@]}"; do
-        if [[ "${repo}" =~ /^http.*/ ]]; then
+        if [[ "${repo}" =~ ^http.* ]]; then
             echo "DEBUG: using yum-config-manager, adding ${repo}"
             yum-config-manager --add-repo "${repo}"
             continue
@@ -161,7 +161,7 @@ function setup_base() {
     curr_packages=()
     curr_packages+=("${normal_pkgs[@]}")
     cleanup_software_groups "${softgroups_rm[@]}"
-    setup_repos "${curr_packages[@]}"
+    setup_repos "${curr_repos[@]}"
     setup_packages "${curr_packages[@]}"
     setup_git "${EMAIL_ADDR}" "${FULL_NAME}"
     setup_docker
