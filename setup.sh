@@ -4,7 +4,7 @@ ve_name="${ve_name:-"ansible-poc"}"
 # TODO: on a non default setup (with SCL or more advanced versions of python - adjust accordingly
 py_exec="${py_exec:-"$( command -v python2.7 )"}"
 vault_passwd_file_default="./vault_password"
-cfg_url_default="https://raw.githubusercontent.com/ansible/ansible/devel/examplesa/ansible.cfg"
+cfg_url_default="https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg"
 vmw_sdk_url_default="https://github.com/vmware/vsphere-automation-sdk-python"
 vmw_ansible_inventory_default="inventory.vmware.yml"
 ansible_remote_user="${ansible_remote_user:-"root"}"
