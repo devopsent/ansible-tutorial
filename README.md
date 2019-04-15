@@ -1,4 +1,4 @@
-# Robota
+# Ansible tutorial
 
 this repository contains ansible automation
 
