@@ -1,0 +1,6 @@
+*.vmware.yml
+*.vmware.yml.backup
+vault_password
+vault.yml
+roles
+playbooks/*.retry
