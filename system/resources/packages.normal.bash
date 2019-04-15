@@ -13,4 +13,6 @@ declare -a current_list=(
     "tmux"
     "vim-enhanced"
     "yum-utils"
+    "wget"
+    "gcc"
 )
