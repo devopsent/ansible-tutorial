@@ -1,16 +1,22 @@
 # Ansible Control Node Setup
 
-## Assumptions:
+This folder contains system setup script to prepare a machine to setup Ansible
+## Requirements:
 
-1. CentOS 7.x operating system
-1. Login as regular user
-1. User can run commands as `root`: `sudo whoami`
+1. Supported Operating Systems:
+    * CentOS 7.x
+1. OS packages installed:
+    * CentOS:
+        * redhat-lsb-core
+1. Login as regular user capable to become `root`
 
 ## End result:
 
-1. system is set up with required software, including
+1. The system is set up with required software to setup Ansible on this machine
 
-1. Clone this repository from gitlab under `${HOME}/src/ansible-tutorial`
+## Setup
+
+1. Clone this repository under `${HOME}/src/ansible-tutorial`
 1. Login as `root` in its root repository and run:
         
         export FULL_NAME="Full Name"

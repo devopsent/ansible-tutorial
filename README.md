@@ -1,16 +1,15 @@
 # Ansible tutorial
 
-this repository contains ansible automation
-
+This repository contains ansible automation 
 Instructions follow
-
 
 ## Setup
 
-1. Clone this repository to your ansible master node, under your regular user's home folder:
+1. Clone this repository to your intended ansible controller node, run:
         
-        mkdir -p ~/src/github.com/devopsent && cd ~/src/github.com/devopsent && git clone git@github.com:devopsent/ansible-tutorial.git
-1. Follow [Ansible Master Setup](system/ANSIBLE_MASTER.md) to the end
+        mkdir -p ~/src/github.com/devopsent && cd ~/src/github.com/devopsent
+        git clone https://github.com/devopsent/ansible-tutorial.git
+1. Follow [Ansible Control Node Setup](system/ANSIBLE_CONTROL_NODE.md) to the letter
 1. Prepare the following information:
     * ansible vault password of your choice
     * VCenter Connection details:
