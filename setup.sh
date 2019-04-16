@@ -7,7 +7,8 @@ vault_passwd_file_default="./vault_password"
 cfg_url_default="https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg"
 vmw_sdk_url_default="https://github.com/vmware/vsphere-automation-sdk-python"
 vmw_ansible_inventory_default="inventory.vmware.yml"
-ansible_remote_user="${ansible_remote_user:-"root"}"
+ansible_remote_user_default="root"
+ansible_remote_user="${ansible_remote_user:-"${ansible_remote_user_default}"}"
 
 function ensure_distribution() {
     local \
@@ -84,6 +85,11 @@ host_key_checking = False
 vault_password_file=vault_password
 remote_user = ${remote_user}
 inventory = ${inventory}
+log_path = ansible.log
+
+[paramiko_connection]
+record_host_keys = True
+host_key_auto_add = True
 
 #[inventory]
 #enable_plugins = vmware_vm_inventory
@@ -93,21 +99,6 @@ inventory = ${inventory}
 
 [privilege_escalation]
 
-[paramiko_connection]
-record_host_keys = True
-host_key_auto_add = True
-
-[ssh_connection]
-
-[persistent_connection]
-
-[accelerate]
-
-[selinux]
-
-[colors]
-
-[diff]
 _EOF
     return $?
 }
@@ -227,6 +218,8 @@ function main() {
         "${vmw_ansible_inventory_default}" \
         "${ansible_remote_user}"
     mkdir -p roles
+    mkdir -p playbooks
+    mkdir -p group_vars
     return $?
 }
 
